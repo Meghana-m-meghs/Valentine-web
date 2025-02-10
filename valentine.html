@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            position: relative;
+            margin-top: 50px;
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        .teddy {
+            width: 200px;
+        }
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .to-tommy {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff4d4d;
+            margin-top: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: #ffcccc;
+            color: black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <div class="to-tommy">To Tommy</div>
+        
+        <div class="message">Will you be my Valentine? 💖</div>
+        <div class="buttons">
+            <button class="btn yes" onclick="acceptLove()">Yes! 💕</button>
+            <button class="btn no" id="noBtn" onmouseover="moveNoButton()">No 😢</button>
+        </div>
+    </div>
+
+    <script>
+        function acceptLove() {
+            alert("Yay! You're my Valentine, Tommy! 🎉💖");
+        }
+
+        function moveNoButton() {
+            var btn = document.getElementById("noBtn");
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
